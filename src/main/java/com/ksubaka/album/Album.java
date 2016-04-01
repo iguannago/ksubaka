@@ -3,6 +3,9 @@ package com.ksubaka.album;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by davicres on 01/04/2016.
  */
@@ -13,6 +16,8 @@ public class Album {
     @JsonProperty("release_date")
     private String year;
     private String id;
+    @JsonProperty("artists")
+    private List<Artist> artistList = new ArrayList<Artist>();
 
     public String getTitle() {
         return title;
@@ -30,7 +35,7 @@ public class Album {
         this.year = year;
     }
 
-    public String getId() {
+    public java.lang.String getId() {
         return id;
     }
 
@@ -38,12 +43,20 @@ public class Album {
         this.id = id;
     }
 
+    public List<Artist> getArtistList() {
+        return artistList;
+    }
+
+    public void setArtistList(List<Artist> artistList) {
+        this.artistList = artistList;
+    }
+
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return "Album{" +
-                "title='" + title + '\'' +
-                ", year='" + year + '\'' +
-                ", id='" + id + '\'' +
+                "title=" + title +
+                ", year=" + year +
+                ", artistList=" + artistList +
                 '}';
     }
 }
