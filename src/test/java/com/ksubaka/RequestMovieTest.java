@@ -1,5 +1,6 @@
 package com.ksubaka;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotEquals;
@@ -27,6 +28,21 @@ public class RequestMovieTest {
         assertNotNull(movieYear);
         assertNotEquals("", movieYear);
         System.out.println("movieYear: " + movieYear);
+    }
+
+    @Test@Ignore
+    public void httpCallReturnMovieDirector() {
+        String movieDirector = movieList.getMovieList().get(0).getDirector();
+        assertNotNull(movieDirector);
+        assertNotEquals("", movieDirector);
+        System.out.println("movieDirector: " + movieDirector);
+    }
+    @Test
+    public void httpCallReturnMovieImdbID() {
+        String movieImdbID = movieList.getMovieList().get(0).getImdbID();
+        assertNotNull(movieImdbID);
+        assertNotEquals("", movieImdbID);
+        System.out.println("movieImdbID: " + movieImdbID);
     }
 
 }

@@ -12,6 +12,9 @@ public class Movie {
     private String title;
     @JsonProperty(value = "Year")
     private String year;
+    private String director;
+    @JsonProperty(value = "imdbID")
+    private String imdbID;
 
     public String getTitle() {
         return title;
@@ -27,5 +30,21 @@ public class Movie {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public String getImdbID() {
+        return imdbID;
+    }
+
+    public void setImdbID(String imdbID) {
+        this.imdbID = imdbID;
     }
 }
