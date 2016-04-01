@@ -11,13 +11,17 @@ public class RequestMovie {
 
     public MovieList call(String title) {
         MovieList movieList = doHttpCallToRetrieveMovilesByTitle(title);
+        doHttpCallToRetrieveMovieDirector(movieList);
+        return movieList;
+    }
+
+    private void doHttpCallToRetrieveMovieDirector(MovieList movieList) {
         for (int i = 0; i < movieList.getMovieList().size(); i++) {
             String imdbId = movieList.getMovieList().get(i).getImdbID();
             Movie movie = restTemplate.getForObject("http://www.omdbapi.com/?i=" + imdbId + "&plot=short&r=json",
                     Movie.class);
              movieList.getMovieList().set(i, movie);
         }
-        return movieList;
     }
 
     private MovieList doHttpCallToRetrieveMovilesByTitle(String title) {
