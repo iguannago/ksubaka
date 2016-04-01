@@ -6,7 +6,6 @@ import com.ksubaka.album.RequestAlbum;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -16,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public class RequestAlbumTest {
 
     private RequestAlbum requestAlbum = new RequestAlbum();
-    private List<Album> albums = (ArrayList<Album>) requestAlbum.call("back to black");
+    private ArrayList<Album> albums = (ArrayList<Album>) requestAlbum.call("back to black");
 
     @Test
     public void httpCallReturnsAlbumTitle() {
