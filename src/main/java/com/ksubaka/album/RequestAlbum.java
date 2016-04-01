@@ -11,11 +11,11 @@ public class RequestAlbum {
 
     public AlbumWrapper call(String title) {
         AlbumWrapper albumList = doHttpCallToRetrieveAlbumsByTitle(title);
-        doHttpCallToRetrieveAlbumYears(albumList);
+        doHttpCallToRetrieveAlbumYearsAndArtists(albumList);
         return albumList;
     }
 
-    private void doHttpCallToRetrieveAlbumYears(AlbumWrapper albumList) {
+    private void doHttpCallToRetrieveAlbumYearsAndArtists(AlbumWrapper albumList) {
         for (int i = 0; i < albumList.getAlbums().getAlbumList().size(); i++) {
             String albumId = albumList.getAlbums().getAlbumList().get(i).getId();
             Album album = restTemplate.getForObject("https://api.spotify.com/v1/albums/" + albumId, Album.class);
