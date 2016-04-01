@@ -1,8 +1,8 @@
 package com.ksubaka;
 
+import com.ksubaka.album.Album;
 import com.ksubaka.album.AlbumWrapper;
 import com.ksubaka.album.RequestAlbum;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
@@ -17,23 +17,23 @@ public class RequestAlbumTest {
 
     @Test
     public void httpCallReturnsAlbumTitle() {
-        String albumTitle = albumList.getAlbums().getAlbumList().get(0).getTitle();
-        System.out.println("albumTitle: " + albumTitle);
-        assertNotNull(albumTitle);
+        for (Album album: albumList.getAlbums().getAlbumList()) {
+            assertNotNull(album.getTitle());
+        }
     }
 
-    @Test@Ignore
+    @Test
     public void httpCallReturnsAlbumYear() {
-        String albumYear = albumList.getAlbums().getAlbumList().get(0).getYear();
-        System.out.println("albumYear: " + albumYear);
-        assertNotNull(albumYear);
+        for (Album album: albumList.getAlbums().getAlbumList()) {
+            assertNotNull(album.getYear());
+        }
     }
 
     @Test
     public void httpCallReturnsAlbumID() {
-        String albumId = albumList.getAlbums().getAlbumList().get(0).getId();
-        System.out.println("albumId: " + albumId);
-        assertNotNull(albumId);
+        for (Album album: albumList.getAlbums().getAlbumList()) {
+            assertNotNull(album.getId());
+        }
     }
 
 

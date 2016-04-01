@@ -1,10 +1,10 @@
 package com.ksubaka;
 
+import com.ksubaka.movie.Movie;
 import com.ksubaka.movie.MovieList;
 import com.ksubaka.movie.RequestMovie;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -17,33 +17,29 @@ public class RequestMovieTest {
 
     @Test
     public void httpCallReturnMovieTitle() {
-        String movieTitle = movieList.getMovieList().get(0).getTitle();
-        assertNotNull(movieTitle);
-        assertNotEquals("", movieTitle);
-        System.out.println("movieTitle: " + movieTitle);
+        for (Movie movie: movieList.getMovieList()) {
+            assertNotNull(movie.getTitle());
+        }
     }
 
     @Test
     public void httpCallReturnMovieYear() {
-        String movieYear = movieList.getMovieList().get(0).getYear();
-        assertNotNull(movieYear);
-        assertNotEquals("", movieYear);
-        System.out.println("movieYear: " + movieYear);
+        for (Movie movie: movieList.getMovieList()) {
+            assertNotNull(movie.getYear());
+        }
     }
 
     @Test
     public void httpCallReturnMovieDirector() {
-        String movieDirector = movieList.getMovieList().get(0).getDirector();
-        assertNotNull(movieDirector);
-        assertNotEquals("", movieDirector);
-        System.out.println("movieDirector: " + movieDirector);
+        for (Movie movie: movieList.getMovieList()) {
+            assertNotNull(movie.getDirector());
+        }
     }
     @Test
     public void httpCallReturnMovieImdbID() {
-        String movieImdbID = movieList.getMovieList().get(0).getImdbID();
-        assertNotNull(movieImdbID);
-        assertNotEquals("", movieImdbID);
-        System.out.println("movieImdbID: " + movieImdbID);
+        for (Movie movie: movieList.getMovieList()) {
+            assertNotNull(movie.getImdbID());
+        }
     }
 
 }

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Album {
     @JsonProperty("name")
     private String title;
+    @JsonProperty("release_date")
     private String year;
     private String id;
 
@@ -19,13 +20,6 @@ public class Album {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    @Override
-    public String toString() {
-        return "Album{" +
-                "title='" + title + '\'' +
-                '}';
     }
 
     public String getYear() {
@@ -42,5 +36,14 @@ public class Album {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Album{" +
+                "title='" + title + '\'' +
+                ", year='" + year + '\'' +
+                ", id='" + id + '\'' +
+                '}';
     }
 }
