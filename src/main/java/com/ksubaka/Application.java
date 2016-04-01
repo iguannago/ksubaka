@@ -21,6 +21,12 @@ public class Application {
         }
     }
 
+    private void displayAlbums(AlbumWrapper albumList) {
+        for (Album album : albumList.getAlbums().getAlbumList()) {
+            log.info(album.toString());
+        }
+    }
+
     public static void main(String[] args) {
         Application app = new Application();
         if (System.getProperty("api").equals("imdb")) {
@@ -31,9 +37,7 @@ public class Application {
         if (System.getProperty("api").equals("spotify")) {
             RequestAlbum requestAlbum = new RequestAlbum();
             AlbumWrapper albumList = requestAlbum.call(System.getProperty("album"));
-            for (Album album : albumList.getAlbums().getAlbumList()) {
-                log.info(album.toString());
-            }
+            app.displayAlbums(albumList);
         }
     }
 
