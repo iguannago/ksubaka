@@ -24,16 +24,17 @@ public class Application {
     public static void main(String[] args) {
         Application app = new Application();
         String title;
+        Request request;
         if (System.getProperty("api").equals("imdb")) {
             title = System.getProperty("movie");
-            RequestMovie requestMovie = new RequestMovie();
-            MovieList movie = requestMovie.call(title);
-            app.display(movie.getMovieList());
+            request = new RequestMovie();
+            MovieList movieList = (MovieList) request.call(title);
+            app.display(movieList.getMovieList());
         }
         if (System.getProperty("api").equals("spotify")) {
             title = System.getProperty("album");
-            RequestAlbum requestAlbum = new RequestAlbum();
-            AlbumWrapper albums = requestAlbum.call(title);
+            request = new RequestAlbum();
+            AlbumWrapper albums = (AlbumWrapper) request.call(title);
             app.display(albums.getAlbums().getAlbumList());
         }
     }

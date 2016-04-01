@@ -1,11 +1,12 @@
 package com.ksubaka.album;
 
+import com.ksubaka.Request;
 import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by davicres on 01/04/2016.
  */
-public class RequestAlbum {
+public class RequestAlbum implements Request<AlbumWrapper> {
 
     private RestTemplate restTemplate = new RestTemplate();
 

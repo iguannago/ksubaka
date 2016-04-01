@@ -1,11 +1,12 @@
 package com.ksubaka.movie;
 
+import com.ksubaka.Request;
 import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by davicres on 01/04/2016.
  */
-public class RequestMovie {
+public class RequestMovie implements Request<MovieList> {
 
     private RestTemplate restTemplate = new RestTemplate();;
 
