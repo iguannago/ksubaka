@@ -14,9 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public class RequestAlbumTest {
 
     private RequestAlbum requestAlbum = new RequestAlbum();
-    ;
     private AlbumWrapper albumList = requestAlbum.call("back to black");
-    ;
 
     @Test
     public void httpCallReturnsAlbumTitle() {

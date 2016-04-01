@@ -2,6 +2,7 @@ package com.ksubaka.album;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.ksubaka.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
  * Created by davicres on 01/04/2016.
  */
 @JsonIgnoreProperties(ignoreUnknown = false)
-public class Album {
+public class Album extends Item {
     @JsonProperty("name")
     private String title;
     @JsonProperty("release_date")

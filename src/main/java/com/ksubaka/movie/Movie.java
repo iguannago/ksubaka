@@ -2,12 +2,13 @@ package com.ksubaka.movie;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.ksubaka.Item;
 
 /**
  * Created by davicres on 01/04/2016.
  */
 @JsonIgnoreProperties(ignoreUnknown = false)
-public final class Movie {
+public final class Movie extends Item {
     @JsonProperty("Title")
     private String title;
     @JsonProperty("Year")
