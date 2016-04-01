@@ -56,7 +56,7 @@ public class Album {
         return "Album{" +
                 "title=" + title +
                 ", year=" + year +
-                ", artistList=" + artistList +
+                ","  + artistList +
                 '}';
     }
 }
