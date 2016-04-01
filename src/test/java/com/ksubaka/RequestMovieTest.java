@@ -1,5 +1,7 @@
 package com.ksubaka;
 
+import com.ksubaka.movie.MovieList;
+import com.ksubaka.movie.RequestMovie;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotEquals;

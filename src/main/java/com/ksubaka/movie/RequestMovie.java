@@ -1,4 +1,4 @@
-package com.ksubaka;
+package com.ksubaka.movie;
 
 import org.springframework.web.client.RestTemplate;
 

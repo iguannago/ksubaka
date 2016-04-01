@@ -1,5 +1,8 @@
 package com.ksubaka;
 
+import com.ksubaka.movie.Movie;
+import com.ksubaka.movie.MovieList;
+import com.ksubaka.movie.RequestMovie;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
