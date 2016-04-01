@@ -9,10 +9,12 @@ import static org.junit.Assert.assertNotNull;
  * Created by davicres on 01/04/2016.
  */
 public class RequestMovieTest {
+
+    private RequestMovie requestMovie = new RequestMovie();
+    private MovieList movieList = requestMovie.call("Indian Jones");;
+
     @Test
     public void httpCallReturnMovieTitle() {
-        RequestMovie requestMovie = new RequestMovie();
-        MovieList movieList = requestMovie.call("Indian Jones");
         String movieTitle = movieList.getMovieList().get(0).getTitle();
         assertNotNull(movieTitle);
         assertNotEquals("", movieTitle);
@@ -21,8 +23,6 @@ public class RequestMovieTest {
 
     @Test
     public void httpCallReturnMovieYear() {
-        RequestMovie requestMovie = new RequestMovie();
-        MovieList movieList = requestMovie.call("Indian Jones");
         String movieYear = movieList.getMovieList().get(0).getYear();
         assertNotNull(movieYear);
         assertNotEquals("", movieYear);
