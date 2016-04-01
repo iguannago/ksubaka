@@ -55,7 +55,6 @@ public final class Movie {
                 "title='" + title + '\'' +
                 ", year='" + year + '\'' +
                 ", director='" + director + '\'' +
-                ", imdbID='" + imdbID + '\'' +
                 '}';
     }
 }
