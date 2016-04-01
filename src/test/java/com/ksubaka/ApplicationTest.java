@@ -13,4 +13,12 @@ public class ApplicationTest {
         System.setProperty("movie", "Indiana Jones");
         Application.main(null);
     }
+
+    @Test
+    public void requestAlbumApiTest() {
+        System.setProperty("api", "spotify");
+        System.setProperty("album", "back to black");
+        Application.main(null);
+    }
+
 }

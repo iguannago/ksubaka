@@ -1,5 +1,8 @@
 package com.ksubaka;
 
+import com.ksubaka.album.Album;
+import com.ksubaka.album.AlbumWrapper;
+import com.ksubaka.album.RequestAlbum;
 import com.ksubaka.movie.Movie;
 import com.ksubaka.movie.MovieList;
 import com.ksubaka.movie.RequestMovie;
@@ -24,6 +27,13 @@ public class Application {
             RequestMovie requestMovie = new RequestMovie();
             MovieList movieList = requestMovie.call((System.getProperty("movie")));
             app.displayMovies(movieList);
+        }
+        if (System.getProperty("api").equals("spotify")) {
+            RequestAlbum requestAlbum = new RequestAlbum();
+            AlbumWrapper albumList = requestAlbum.call(System.getProperty("album"));
+            for (Album album : albumList.getAlbums().getAlbumList()) {
+                log.info(album.toString());
+            }
         }
     }
 
