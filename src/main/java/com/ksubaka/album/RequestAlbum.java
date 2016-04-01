@@ -1,7 +1,10 @@
 package com.ksubaka.album;
 
+import com.ksubaka.Item;
 import com.ksubaka.Request;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Collection;
 
 /**
  * Created by davicres on 01/04/2016.
@@ -10,10 +13,10 @@ public class RequestAlbum implements Request<AlbumWrapper> {
 
     private RestTemplate restTemplate = new RestTemplate();
 
-    public AlbumWrapper call(String title) {
+    public Collection<? extends Item> call(String title) {
         AlbumWrapper albumList = doHttpCallToRetrieveAlbumsByTitle(title);
         doHttpCallToRetrieveAlbumYearsAndArtists(albumList);
-        return albumList;
+        return albumList.getAlbums().getAlbumList();
     }
 
     private void doHttpCallToRetrieveAlbumYearsAndArtists(AlbumWrapper albumList) {
