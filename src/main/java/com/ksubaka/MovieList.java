@@ -12,7 +12,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = false)
 public final class MovieList {
 
-    @JsonProperty(value = "Search")
+    @JsonProperty("Search")
     private List<Movie> movieList = new ArrayList<Movie>();
 
     public List<Movie> getMovieList() {

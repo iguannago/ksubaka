@@ -8,13 +8,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonIgnoreProperties(ignoreUnknown = false)
 public final class Movie {
-    @JsonProperty(value = "Title")
+    @JsonProperty("Title")
     private String title;
-    @JsonProperty(value = "Year")
+    @JsonProperty("Year")
     private String year;
-    @JsonProperty(value = "Director")
+    @JsonProperty("Director")
     private String director;
-    @JsonProperty(value = "imdbID")
+    @JsonProperty("imdbID")
     private String imdbID;
 
     public String getTitle() {
