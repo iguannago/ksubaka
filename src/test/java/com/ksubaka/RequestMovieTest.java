@@ -1,18 +1,22 @@
 package com.ksubaka;
 
 import org.junit.Test;
-import org.springframework.http.HttpStatus;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by davicres on 01/04/2016.
  */
 public class RequestMovieTest {
     @Test
-    public void httpCallReturn200OK() {
+    public void httpCallReturnMovieTitle() {
         RequestMovie requestMovie = new RequestMovie();
-        HttpStatus httpStatus = requestMovie.call("Indian Jones");
-        assertEquals(HttpStatus.OK, httpStatus);
+        MovieList movieList = requestMovie.call("Indian Jones");
+        String movieTitle = movieList.getMovieList().get(0).getTitle();
+        assertNotNull(movieTitle);
+        assertNotEquals("", movieTitle);
+        System.out.println("movieTitle: " + movieTitle);
     }
+
 }
