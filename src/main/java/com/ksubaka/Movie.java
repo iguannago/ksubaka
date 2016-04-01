@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Movie {
     @JsonProperty(value = "Title")
     private String title;
+    @JsonProperty(value = "Year")
+    private String year;
 
     public String getTitle() {
         return title;
@@ -17,5 +19,13 @@ public class Movie {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 }

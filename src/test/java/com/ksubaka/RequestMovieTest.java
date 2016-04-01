@@ -19,4 +19,14 @@ public class RequestMovieTest {
         System.out.println("movieTitle: " + movieTitle);
     }
 
+    @Test
+    public void httpCallReturnMovieYear() {
+        RequestMovie requestMovie = new RequestMovie();
+        MovieList movieList = requestMovie.call("Indian Jones");
+        String movieYear = movieList.getMovieList().get(0).getYear();
+        assertNotNull(movieYear);
+        assertNotEquals("", movieYear);
+        System.out.println("movieYear: " + movieYear);
+    }
+
 }
