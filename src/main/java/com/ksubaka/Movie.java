@@ -7,11 +7,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Created by davicres on 01/04/2016.
  */
 @JsonIgnoreProperties(ignoreUnknown = false)
-public class Movie {
+public final class Movie {
     @JsonProperty(value = "Title")
     private String title;
     @JsonProperty(value = "Year")
     private String year;
+    @JsonProperty(value = "Director")
     private String director;
     @JsonProperty(value = "imdbID")
     private String imdbID;
@@ -46,5 +47,15 @@ public class Movie {
 
     public void setImdbID(String imdbID) {
         this.imdbID = imdbID;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", year='" + year + '\'' +
+                ", director='" + director + '\'' +
+                ", imdbID='" + imdbID + '\'' +
+                '}';
     }
 }

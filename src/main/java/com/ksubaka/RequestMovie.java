@@ -6,13 +6,21 @@ import org.springframework.web.client.RestTemplate;
  * Created by davicres on 01/04/2016.
  */
 public class RequestMovie {
+
+    private RestTemplate restTemplate = new RestTemplate();;
+
     public MovieList call(String title) {
-        RestTemplate restTemplate = new RestTemplate();
-        MovieList movieList = doHttpCallToRetrieveMovilesByTitle(title, restTemplate);
+        MovieList movieList = doHttpCallToRetrieveMovilesByTitle(title);
+        for (int i = 0; i < movieList.getMovieList().size(); i++) {
+            String imdbId = movieList.getMovieList().get(i).getImdbID();
+            Movie movie = restTemplate.getForObject("http://www.omdbapi.com/?i=" + imdbId + "&plot=short&r=json",
+                    Movie.class);
+             movieList.getMovieList().set(i, movie);
+        }
         return movieList;
     }
 
-    private MovieList doHttpCallToRetrieveMovilesByTitle(String title, RestTemplate restTemplate) {
+    private MovieList doHttpCallToRetrieveMovilesByTitle(String title) {
         return restTemplate.getForObject("http://www.omdbapi.com/?s=" + title +
                 "&type=movie&y=&plot=short&r=json", MovieList.class);
     }

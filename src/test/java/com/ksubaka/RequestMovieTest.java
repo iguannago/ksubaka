@@ -1,6 +1,5 @@
 package com.ksubaka;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotEquals;
@@ -12,7 +11,7 @@ import static org.junit.Assert.assertNotNull;
 public class RequestMovieTest {
 
     private RequestMovie requestMovie = new RequestMovie();
-    private MovieList movieList = requestMovie.call("Indian Jones");;
+    private MovieList movieList = requestMovie.call("Indiana Jones");;
 
     @Test
     public void httpCallReturnMovieTitle() {
@@ -30,7 +29,7 @@ public class RequestMovieTest {
         System.out.println("movieYear: " + movieYear);
     }
 
-    @Test@Ignore
+    @Test
     public void httpCallReturnMovieDirector() {
         String movieDirector = movieList.getMovieList().get(0).getDirector();
         assertNotNull(movieDirector);
