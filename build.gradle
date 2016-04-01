@@ -12,7 +12,7 @@ buildscript {
     }
 }
 
-ar {
+jar {
     baseName = 'ksubaka'
     version =  '0.1.0'
 }
