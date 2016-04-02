@@ -48,6 +48,16 @@ public class Album extends Item {
         return artistList;
     }
 
+    @Override
+    public String getDirector() {
+        return null;
+    }
+
+    @Override
+    public String getImdbID() {
+        return null;
+    }
+
     public void setArtistList(List<Artist> artistList) {
         this.artistList = artistList;
     }
@@ -57,7 +67,7 @@ public class Album extends Item {
         return "Album{" +
                 "title=" + title +
                 ", year=" + year +
-                ","  + artistList +
+                "," + artistList +
                 '}';
     }
 }

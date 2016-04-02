@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * Created by davicres on 01/04/2016.
  */
-public class RequestAlbum implements Request<AlbumWrapper> {
+public class RequestAlbum implements Request {
 
     private RestTemplate restTemplate = new RestTemplate();
 
