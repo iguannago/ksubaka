@@ -3,6 +3,9 @@ package com.ksubaka.movie;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ksubaka.Item;
+import com.ksubaka.album.Artist;
+
+import java.util.List;
 
 /**
  * Created by davicres on 01/04/2016.
@@ -28,6 +31,16 @@ public final class Movie extends Item {
 
     public String getYear() {
         return year;
+    }
+
+    @Override
+    public String getId() {
+        return null;
+    }
+
+    @Override
+    public List<Artist> getArtistList() {
+        return null;
     }
 
     public void setYear(String year) {
