@@ -2,12 +2,13 @@ package com.ksubaka.album;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.ksubaka.Response;
 
 /**
  * Created by davicres on 01/04/2016.
  */
 @JsonIgnoreProperties(ignoreUnknown = false)
-public class AlbumWrapper {
+public class AlbumWrapper extends Response {
 
     @JsonProperty("albums")
     private Albums albums = new Albums();
