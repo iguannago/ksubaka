@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class RequestAlbumTest {
 
-    private RequestAlbum requestAlbum = new RequestAlbum();
+    private RequestAlbum requestAlbum = new RequestAlbum("back to black");
     @SuppressWarnings("unchecked") // this is legal at execution time because I am injecting RequestAlbum
     private List<Album> albums = (List<Album>) requestAlbum.call("back to black");
 

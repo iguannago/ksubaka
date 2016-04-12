@@ -17,7 +17,7 @@ public final class Context {
             request = new RequestMovie();
         }
         if (api.equals("spotify")) {
-            request = new RequestAlbum();
+            request = new RequestAlbum(System.getProperty("album"));
         }
     }
 

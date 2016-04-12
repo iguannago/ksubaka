@@ -1,5 +1,6 @@
 package com.ksubaka.album;
 
+import com.ksubaka.HttpCall;
 import com.ksubaka.Item;
 import com.ksubaka.Request;
 import org.springframework.web.client.RestTemplate;
@@ -12,9 +13,15 @@ import java.util.Collection;
 public class RequestAlbum implements Request {
 
     private RestTemplate restTemplate = new RestTemplate();
+    private HttpCall httpCall;
+
+    public RequestAlbum(String album) {
+        this.httpCall = new HttpCall("https://api.spotify.com/v1/search?q=" + album +
+                "&type=album&market=US", AlbumWrapper.class);
+    }
 
     public Collection<? extends Item> call(String title) {
-        AlbumWrapper albumList = doHttpCallToRetrieveAlbumsByTitle(title);
+        AlbumWrapper albumList = (AlbumWrapper) httpCall.getResponse();
         doHttpCallToRetrieveAlbumYearsAndArtists(albumList);
         return albumList.getAlbums().getAlbumList();
     }
@@ -27,8 +34,4 @@ public class RequestAlbum implements Request {
         }
     }
 
-    private AlbumWrapper doHttpCallToRetrieveAlbumsByTitle(String album) {
-        return restTemplate.getForObject("https://api.spotify.com/v1/search?q=" + album +
-                "&type=album&market=US", AlbumWrapper.class);
-    }
 }
